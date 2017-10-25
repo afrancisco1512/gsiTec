@@ -1,0 +1,141 @@
+{% load staticfiles%} <!---Carga los archivos Staticos (CSS, JS...)--->
+
+{% block meta  %} <!---Bloque con todos lo meta caracteres--->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% endblock %}
+
+{% block tittle %} <!---Bloque que contiene el Titulo de la Pagina--->
+  <title>Sistema de Gestión de Ticket</title>
+{% endblock %}
+
+{% block css %}<!---Bloque con todos los CSS--->
+  <link rel="stylesheet" href="{% static "css/bootstrap.min.css"%}">
+  <link rel="stylesheet" href="{% static "css/base.css"%}">
+  <link rel="stylesheet" href="static/css/font-awesome.css">
+  <link rel="stylesheet" href="static/css/font-awesome.min.css">
+{% endblock %}
+
+{% block script %} <!---Bloque con todos los SCRIPTS--->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src= "static/js/jquery-3.2.1.min.js"></script>
+  <script src= "{% static "js/bootstrap.min.js"%}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+{% endblock %}
+
+
+{% block modal %}
+<div class="modal" tabindex="-1" role="dialog" id="creaTicket"><!---Modal Creacion de ticket--->
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Creación de Ticket</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+<form id="ticketCrear">{%csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Nombre Completo</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Nombre Completo">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Correo Electronico</label>
+      <input type="email" class="form-control" id="correo" placeholder="Correo Electronico">
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Título</label>
+    <input type="text" class="form-control" id="titulo" placeholder="Título del mensaje">
+  </div>
+  <div class="form-group">
+    <label>Mensaje</label>
+    <textarea type="text" class="form-control" id="mensaje" placeholder="Cuerpo del Mensaje"> </textarea>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Tipo de Prioridad</label>
+      <select id="prioridad" class="form-control">
+        <option>Baja</option>
+        <option>Normal</option>
+        <option>Alta</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Tipo de Servicio</label>
+      <select id="servicio" class="form-control">
+        <option>Epower</option>
+        <option>SmarthCapture</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Adjuntar Imagen</label>
+      <input type="file" class="filestyle" data-badgeName="badge-danger">
+    </div>
+  </div>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Crear</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div><!---Fin Modal--->
+
+
+<div class="modal" tabindex="-1" role="dialog" id="verTicket">
+  <!--Inicio Modal 2 --->
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Listado de Ticket</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>E-mail</th>
+              <th>Título</th>
+              <th>Prioridad</th>
+              <th>Servicio</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"></th>
+              <td> </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div><!--Fin Modal 2 --->
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+{% block content %}
+{% endblock %}

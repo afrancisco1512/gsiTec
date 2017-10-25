@@ -1,0 +1,26 @@
+.cuerpo {
+  background-color: #f2f2f2;
+}
+
+.primerModulo{
+  position: absolute;
+  left: 41px;
+  bottom: 430px;
+}
+
+.segundoModulo{
+  position: absolute;
+
+  left: 486px;
+  bottom: 430px
+
+}
+
+.tercerModulo{
+  position: absolute;
+  right: 35px;
+  bottom: 430px;
+
+
+
+}

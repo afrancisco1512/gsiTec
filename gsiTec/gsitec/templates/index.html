@@ -1,0 +1,43 @@
+{% extends "base.html" %}<!---Carga todo lo que tenga en el archivo de nombre base.html--->
+{% load staticfiles %}<!---Carga los archivos Staticos (CSS, JS...)--->
+{% block content %}<!---Bloque que carga el contenido--->
+
+
+
+<!doctype html>
+<html lang="es">
+  <head>
+    {% block title %}{{ section.title }}{% endblock %}
+  </head>
+
+  <body class="cuerpo">
+    <div class="row justify-content-md-center">
+      <div class="card primerModulo" style="width: 25rem;"> <!---Primer Modulo--->
+          <div class="card-block">
+          <p class="card-text">Formulario de creación de ticket para resolución de ticket.
+          </p>
+          <a data-toggle="modal" data-target="#creaTicket" class="btn btn-primary">Crear Ticket</a>
+          </div>
+      </div><!---Termino del Primer Modulo--->
+
+      <div class="card segundoModulo" style="width: 25rem;"> <!---Segundo Modulo--->
+          <div class="card-block">
+            <span class="fa fa-camera-retro"></span>
+
+            <p class="card-text">Formulario de creación de ticket para resolución de ticket.</p>
+            <a data-toggle="modal" data-target="#verTicket" class="btn btn-primary">Ver Lista de Ticket</a> <br>
+          </div>
+      </div><!---Termino del Segundo Modulo--->
+
+      <div class="card tercerModulo" style="width: 25rem;"> <!---Tercer Modulo--->
+          <div class="card-block">
+            <p class="card-text">Formulario de creación de ticket para resolución de ticket.</p>
+            <a data-toggle="modal" data-target="#editarTicket" class="btn btn-primary">Editar Ticket</a> <br>
+          </div>
+      </div><!---Termino del Tercer Modulo--->
+    </div>
+  </body>
+</html>
+
+
+{% endblock %} <!---Cierre del bloque content)--->
